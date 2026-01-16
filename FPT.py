@@ -44,15 +44,31 @@ Features Added Beyond Level 3 Requirements:
 -----------------------------------------------------------------------------
 '''
 
-
-
 # *********SETUP**********
+import pygame
 
+pygame.init()
 
+WindowWidth = 600
+WindowHeight = 400
+
+window = pygame.display.set_mode((WindowWidth, WindowHeight))
+
+State = "HOME"
+
+#*******Images*******
+
+HomeBg = pygame.image.load("HomeBg.png")
 
 # *********GAME LOOP**********
+Running = True
+while Running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            Running = False
 
-
+    if State == "HOME":
+        window.blit(HomeBg, (0,0))
 
 
     # *********EVENTS**********
